@@ -1,0 +1,32 @@
+{
+  "name": "dl-xlsx",
+  "version": "2.0.1",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "serve": "nodemon server.js"
+  },
+  "dependencies": {
+    "@koa/cors": "^2.2.1",
+    "dateformat": "^3.0.2",
+    "dotenv": "^4.0.0",
+    "fs-extra": "^5.0.0",
+    "jsonwebtoken": "^8.1.0",
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-compress": "^2.0.0",
+    "koa-joi-router": "^5.1.0",
+    "koa-jwt": "^3.3.0",
+    "koa-logger": "^3.1.0",
+    "koa-mount": "^3.0.0",
+    "koa-send": "^4.1.2",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "mongoose": "^5.0.1",
+    "node-xlsx": "^0.11.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}

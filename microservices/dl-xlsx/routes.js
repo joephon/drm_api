@@ -27,9 +27,13 @@ router.get('/dl', async (ctx, next) => {
     sort: { _id: -1 }
   })
 
+  fs.outputFileSync(`${__dirname}/static/cache.xlsx`, prebuild(data))
   ctx.attachment(`${number}-${startTime}-${endTime}-${Date.now()}.xlsx`)
-  ctx.type = types.lookup('xlsx')
-  ctx.body = prebuild(data)
+  await send(ctx, 'static/cache.xlsx')
+
+  // ctx.attachment(`${number}-${startTime}-${endTime}-${Date.now()}.xlsx`)
+  // ctx.type = types.lookup('xlsx')
+  // ctx.body = prebuild(data)
 })
 
 module.exports = () => router.middleware()

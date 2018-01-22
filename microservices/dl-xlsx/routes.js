@@ -9,7 +9,7 @@ const DevMoniter = mongoose.model('DevMoniter')
 const router = Router()
 const { Joi } = Router
 
-router.get('/', async (ctx, next) => {
+router.get('/dl', async (ctx, next) => {
   const { number, startTime, endTime } = ctx.query
 
   if (isEmpty(number) || isEmpty(startTime) || isEmpty(endTime)) {

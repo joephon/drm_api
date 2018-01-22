@@ -23,7 +23,7 @@ router.get('/dl', async (ctx, next) => {
     ts: { $gte: startTime, $lte: endTime },
     number
   }, null, {
-    limit: 100,
+    limit: 5000,
     sort: { _id: -1 }
   })
 

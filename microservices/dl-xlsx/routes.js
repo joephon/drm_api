@@ -10,7 +10,7 @@ const router = Router()
 const { Joi } = Router
 
 router.get('/dl', async (ctx, next) => {
-  const { number, startTime, endTime } = ctx.query
+  const { number, startTime, endTime } = ctx.request.query
 
   if (isEmpty(number) || isEmpty(startTime) || isEmpty(endTime)) {
     ctx.status = 400
@@ -23,7 +23,7 @@ router.get('/dl', async (ctx, next) => {
     ts: { $gte: startTime, $lte: endTime },
     number
   }, null, {
-    limit: 5000,
+    limit: 100,
     sort: { _id: -1 }
   })
 

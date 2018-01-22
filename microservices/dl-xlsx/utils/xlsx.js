@@ -20,6 +20,8 @@ module.exports = {
         data: [_captions].concat(_data),
         name: dateFormat(new Date(), 'isoDate')
       }
-    ])
+    ], {
+      compression: true
+    })
   }
 }

@@ -8,7 +8,11 @@ const {
   MONGODB_DATABASE
 } = process.env
 
-mongoose.connect(`mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@${MONGODB_HOST}/${MONGODB_DATABASE}`)
+mongoose.Promise = global.Promise
+mongoose.connect(`mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@${MONGODB_HOST}/${MONGODB_DATABASE}`, {
+  useMongoClient: true
+})
+
 mongoose.model('DevMoniter', new Schema({
   number: String,
   data: [],

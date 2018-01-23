@@ -36,4 +36,26 @@ router.get('/dl', async (ctx, next) => {
   // ctx.body = prebuild(data)
 })
 
+router.get('/raw', async (ctx, next) => {
+  const { number, startTime, endTime } = ctx.request.query
+
+  if (isEmpty(number) || isEmpty(startTime) || isEmpty(endTime)) {
+    ctx.status = 400
+    return ctx.body = {
+      message: 'Requires parameters: [ number | startTime | endTime ]'
+    }
+  }
+
+  const data = await DevMoniter.find({
+    ts: { $gte: startTime, $lte: endTime },
+    number
+  }, null, {
+    limit: 10000,
+    sort: { _id: -1 }
+  })
+
+  fs.outputFileSync(`${__dirname}/static/cache.json`, JSON.stringify(prebuild(data, 'json')))
+  ctx.body = {}
+})
+
 module.exports = () => router.middleware()

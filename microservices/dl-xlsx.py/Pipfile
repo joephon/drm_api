@@ -10,6 +10,10 @@ name = "pypi"
 xlsxwriter = "*"
 flask = "*"
 flask-pymongo = "*"
+flask-script = "*"
+flask-wtf = "*"
+flask-jwt = "*"
+python-dotenv = "*"
 
 
 [dev-packages]

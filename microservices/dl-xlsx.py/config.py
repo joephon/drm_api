@@ -13,8 +13,10 @@ class DevConfig(Config):
     DEBUG = True
 
 class TestConfig(Config):
+    DEBUG = False
 
 class ProdConfig(Config):
+    DEBUG = False
 
 config = {
     'development': DevConfig,

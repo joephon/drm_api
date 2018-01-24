@@ -20,5 +20,6 @@ for row in _all:
     row_index += 1
 
 workbook.close()
+pprint(len(_all))
 
 # python scripts/samples/xlsx.py  61.47s user 0.92s system 96% cpu 1:04.38 total

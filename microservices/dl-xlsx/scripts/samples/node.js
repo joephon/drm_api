@@ -3,6 +3,8 @@ const dateFormat = require('dateformat')
 const data = require('../../static/cache.json')
 const { _captions, _data } = data
 
+console.log(`_data.length: ${_data.length}`)
+
 xlsx.build([
   {
     data: [_captions].concat(_data),

@@ -13,7 +13,6 @@ flask-pymongo = "*"
 flask-script = "*"
 flask-wtf = "*"
 python-dotenv = "*"
-gunicorn = "*"
 arrow = "*"
 pyjwt = "*"
 

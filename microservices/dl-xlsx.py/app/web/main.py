@@ -1,13 +1,19 @@
+import jwt
 import arrow
-from flask import request, make_response, jsonify, send_from_directory, url_for
+from flask import request, make_response, jsonify, send_from_directory, current_app
 from pprint import pprint
 from . import web as app
 from .. import mongo
 from ..utils import generate_xlsx
 
-@app.route('/')
-def index():
-    return jsonify({})
+@app.before_request
+def jwt_required():
+    token = request.args.get('token')
+
+    try:
+        jwt.decode(token, current_app.config['SECRET_KEY_BASE'])
+    except jwt.exceptions.DecodeError:
+        return jsonify({ 'message': 'Requires authentication' }), 401
 
 @app.route('/dl')
 def send_xlsx_file():
@@ -23,7 +29,7 @@ def send_xlsx_file():
         return jsonify({ 'message': 'Requires parameters: `number`' })
 
     _where = { 'number': number, 'ts': { '$gte': start_at, '$lte': end_at } }
-    _items = mongo.db.devmoniters.find().sort('_id', -1).limit(12)
+    _items = mongo.db.devmoniters.find().sort('_id', -1).limit(current_app.config['MAX_RESULTS_COUNT'])
 
     generate_xlsx(_items)
     filename = "{0}-{1}-{2}-{3}.xlsx".format(number, start_at, end_at, arrow.utcnow().timestamp)

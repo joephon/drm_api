@@ -15,6 +15,8 @@ class Config:
     JWT_VERIFY_CLAIMS = ['signature', 'exp', 'iat']
     JWT_REQUIRED_CLAIMS = ['exp', 'iat']
 
+    MAX_RESULTS_COUNT = 10000
+
     @staticmethod
     def init_app(app):
         pass

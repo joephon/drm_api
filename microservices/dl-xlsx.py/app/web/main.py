@@ -28,6 +28,9 @@ def send_xlsx_file():
     if number == None:
         return jsonify({ 'message': 'Requires parameters: `number`' })
 
+    pprint("MAX_RESULTS_COUNT: {}".format(current_app.config['MAX_RESULTS_COUNT']))
+    pprint("devmoniters.count: {}".format(mongo.db.devmoniters.count()))
+
     _where = { 'number': number, 'ts': { '$gte': start_at, '$lte': end_at } }
     _items = mongo.db.devmoniters.find().sort('_id', -1).limit(current_app.config['MAX_RESULTS_COUNT'])
 

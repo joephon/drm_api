@@ -15,6 +15,7 @@ flask-wtf = "*"
 flask-jwt = "*"
 python-dotenv = "*"
 gunicorn = "*"
+arrow = "*"
 
 
 [dev-packages]

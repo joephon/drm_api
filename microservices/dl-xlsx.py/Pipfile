@@ -12,10 +12,10 @@ flask = "*"
 flask-pymongo = "*"
 flask-script = "*"
 flask-wtf = "*"
-flask-jwt = "*"
 python-dotenv = "*"
 gunicorn = "*"
 arrow = "*"
+pyjwt = "*"
 
 
 [dev-packages]

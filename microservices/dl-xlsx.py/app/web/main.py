@@ -1,9 +1,13 @@
 import arrow
-from flask import request, make_response, jsonify, send_from_directory
+from flask import request, make_response, jsonify, send_from_directory, url_for
 from pprint import pprint
 from . import web as app
 from .. import mongo
 from ..utils import generate_xlsx
+
+@app.route('/')
+def index():
+    return jsonify({})
 
 @app.route('/dl')
 def send_xlsx_file():

@@ -8,7 +8,12 @@ class Config:
     MONGO_USERNAME = os.environ.get('MONGODB_USERNAME')
     MONGO_PASSWORD = os.environ.get('MONGODB_PASSWORD')
     MONGO_DBNAME = os.environ.get('MONGODB_DATABASE')
+
+    SECRET_KEY = os.environ.get('SECRET_KEY_BASE')
     SECRET_KEY_BASE = os.environ.get('SECRET_KEY_BASE')
+
+    JWT_VERIFY_CLAIMS = ['signature', 'exp', 'iat']
+    JWT_REQUIRED_CLAIMS = ['exp', 'iat']
 
     @staticmethod
     def init_app(app):

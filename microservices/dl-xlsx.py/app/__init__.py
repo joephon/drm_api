@@ -8,6 +8,7 @@ mongo = PyMongo()
 def create_app(flask_env):
     app = Flask(__name__)
     app.config.from_object(config[flask_env])
+
     config[flask_env].init_app(app)
     mongo.init_app(app)
 

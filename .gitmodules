@@ -1,0 +1,3 @@
+[submodule "drm-microservices"]
+	path = drm-microservices
+	url = git@github.com:pennyjs/drm-microservices.git

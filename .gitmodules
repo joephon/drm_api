@@ -1,3 +1,3 @@
 [submodule "microservices-api"]
-	path = microservices-api
-	url = git@github.com:pennyjs/microservices-api.git
+  path = microservices-api
+  url = git@github.com:pennyjs/microservices-api.git

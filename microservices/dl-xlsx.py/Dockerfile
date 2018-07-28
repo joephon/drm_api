@@ -1,10 +1,18 @@
-FROM ubuntu:17.10
+FROM ubuntu:18.04
 
 RUN sed -i 's#http://archive.ubuntu.com#http://mirrors.163.com#g' /etc/apt/sources.list
 
 RUN apt-get update
+# RUN apt-get install -y software-properties-common
+# RUN apt-get install -y python-software-properties
+
+# RUN add-apt-repository ppa:deadsnakes/ppa
+# RUN apt-get update
+
 RUN mkdir -p /dl-xlsx.py
 
+RUN apt-get install -y mongodb
+# RUN apt-get install -y python3.6
 RUN apt-get install -y python3-pip
 RUN apt-get install -y sqlite3 libmysqlclient-dev
 

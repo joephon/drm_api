@@ -1,11 +1,9 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
 [packages]
-
 xlsxwriter = "*"
 flask = "*"
 flask-pymongo = "*"
@@ -14,9 +12,9 @@ flask-wtf = "*"
 python-dotenv = "*"
 arrow = "*"
 pyjwt = "*"
+gunicorn = "*"
 
 [dev-packages]
 
 [requires]
-
 python_version = "3.7"

@@ -4,7 +4,7 @@ import arrow
 import xlsxwriter
 from pprint import pprint
 
-data = json.load(open(os.path.abspath(os.path.dirname(__file__) + '/../data.json')))
+data = json.load(open(os.path.abspath(os.path.dirname(__file__) + '/../data.json'), encoding='utf-8'))
 data_keys = data['data_keys']
 captions = data['captions']
 

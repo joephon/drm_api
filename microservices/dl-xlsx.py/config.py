@@ -8,6 +8,7 @@ class Config:
     MONGO_USERNAME = os.environ.get('MONGODB_USERNAME')
     MONGO_PASSWORD = os.environ.get('MONGODB_PASSWORD')
     MONGO_DBNAME = os.environ.get('MONGODB_DATABASE')
+    MONGO_URI = "mongodb://{0}:{1}@{2}/{3}".format(MONGO_USERNAME, MONGO_PASSWORD, MONGO_HOST, MONGO_DBNAME)
 
     SECRET_KEY = os.environ.get('SECRET_KEY_BASE')
     SECRET_KEY_BASE = os.environ.get('SECRET_KEY_BASE')

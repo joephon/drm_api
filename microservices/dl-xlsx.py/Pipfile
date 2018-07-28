@@ -4,7 +4,6 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
 
 xlsxwriter = "*"
@@ -16,11 +15,8 @@ python-dotenv = "*"
 arrow = "*"
 pyjwt = "*"
 
-
 [dev-packages]
-
-
 
 [requires]
 
-python_version = "3.6"
+python_version = "3.7"
